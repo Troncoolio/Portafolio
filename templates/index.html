@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anthony Cabrera — Portafolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --bg-tag: #242424;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.18);
+      --text: #f0f0f0;
+      --text-muted: #888;
+      --text-faint: #555;
+      --purple-bg: #26215C;
+      --purple-text: #CECBF6;
+      --blue-bg: #042C53;
+      --blue-text: #B5D4F4;
+      --amber-bg: #412402;
+      --amber-text: #FAC775;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .port {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 3rem 0 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.5px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .hero-text h1 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 2rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h2 {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-faint);
+      margin-bottom: 1.25rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .proj-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s;
+    }
+
+    .proj-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .proj-card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .proj-card h3 i {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .proj-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .proj-lang {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 500;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .lang-py  { background: var(--purple-bg); color: var(--purple-text); }
+    .lang-cpp { background: var(--blue-bg);   color: var(--blue-text); }
+    .lang-java{ background: var(--amber-bg);  color: var(--amber-text); }
+
+    /* SKILLS */
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 99px;
+      background: var(--bg-tag);
+      border: 0.5px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+    .contact-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 0.5px solid var(--border-hover);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      background: var(--bg-card);
+      transition: background 0.15s;
+    }
+
+    .contact-btn:hover {
+      background: var(--bg-tag);
+    }
+
+    .contact-btn i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="port">
+
+  <div class="hero">
+    <img class="avatar" src="https://i.imgur.com/KHp4FiI.jpeg" alt="Anthony Cabrera Manzo" />
+    <div class="hero-text">
+      <h1>Anthony Cabrera Manzo</h1>
+      <p>Ingeniero en sistemas computacionales (en proceso)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+
+      <a class="proj-card" href="https://github.com/Troncoolio/MLBot" target="_blank">
+        <h3><i class="ti ti-robot"></i> MLBot</h3>
+        <p>Bot de web scraping de ofertas en MercadoLibre con Playwright y alertas por Telegram.</p>
+        <span class="proj-lang lang-py">Python</span>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Troncoolio/Sistema-De-irrigacion-inteligente" target="_blank">
+        <h3><i class="ti ti-plant"></i> Irrigación IoT</h3>
+        <p>Sistema de riego inteligente con ESP32, sensores de suelo y automatización vía IoT.</p>
+        <span class="proj-lang lang-cpp">C++</span>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Troncoolio/papeleria" target="_blank">
+        <h3><i class="ti ti-shopping-bag"></i> Papelería</h3>
+        <p>CRUD completo con Django para gestión de una papelería.</p>
+        <span class="proj-lang lang-py">Python / Django</span>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Troncoolio/nrfProyectoESP32" target="_blank">
+        <h3><i class="ti ti-wifi-off"></i> Inhibidor RF</h3>
+        <p>Inhibidor de señales Bluetooth y WiFi con ESP32 y módulo NRF.</p>
+        <span class="proj-lang lang-cpp">C++</span>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Troncoolio/MiniServerWeb" target="_blank">
+        <h3><i class="ti ti-server"></i> Mini Server Web</h3>
+        <p>Servidor web corriendo en ESP32 en red local, controla un LED desde el browser.</p>
+        <span class="proj-lang lang-cpp">C++</span>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Troncoolio/Compilador" target="_blank">
+        <h3><i class="ti ti-code"></i> Compilador</h3>
+        <p>Compilador desarrollado en Java como proyecto académico.</p>
+        <span class="proj-lang lang-java">Java</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Habilidades</h2>
+    <div class="skills-wrap">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Java</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">C++</span>
+      <span class="skill-tag">Django</span>
+      <span class="skill-tag">Flask</span>
+      <span class="skill-tag">Playwright</span>
+      <span class="skill-tag">ESP32 / IoT</span>
+      <span class="skill-tag">Backend web</span>
+      <span class="skill-tag">Automatizaciones</span>
+      <span class="skill-tag">Railway</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">Telegram API</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Contacto</h2>
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:anthony.cabrera2411@gmail.com">
+        <i class="ti ti-mail"></i> anthony.cabrera2411@gmail.com
+      </a>
+      <a class="contact-btn" href="https://github.com/Troncoolio" target="_blank">
+        <i class="ti ti-brand-github"></i> GitHub
+      </a>
+      <a class="contact-btn" href="https://www.linkedin.com/in/anthonycabreram/" target="_blank">
+        <i class="ti ti-brand-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
